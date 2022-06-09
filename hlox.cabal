@@ -1,0 +1,101 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hlox
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/hlox#readme>
+homepage:       https://github.com/githubuser/hlox#readme
+bug-reports:    https://github.com/githubuser/hlox/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/hlox
+
+library
+  exposed-modules:
+      Lib.Ast
+      Lib.Err
+      Lib.Interpreter
+      Lib.Interpreter.Error
+      Lib.Interpreter.ExecCtx
+      Lib.Interpreter.ExecCtx.Environment
+      Lib.Interpreter.LoxCallable
+      Lib.Interpreter.LoxValue
+      Lib.Interpreter.Runtime
+      Lib.Lexer
+      Lib.Parser
+      Lib.Resolver
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.15 && <5
+    , errors ==2.*
+    , extra >=1.7 && <2
+    , flow ==2.*
+    , hashable ==1.*
+    , hashtables ==1.*
+    , recursion-schemes >=5.2 && <6
+    , text >=1.2.4.1 && <2
+    , time ==1.*
+    , transformers >=0.5 && <1
+    , with-utf8 >=1.0.2.3 && <2
+  default-language: Haskell2010
+
+executable hlox-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.15 && <5
+    , errors ==2.*
+    , extra >=1.7 && <2
+    , flow ==2.*
+    , hashable ==1.*
+    , hashtables ==1.*
+    , hlox
+    , recursion-schemes >=5.2 && <6
+    , text >=1.2.4.1 && <2
+    , time ==1.*
+    , transformers >=0.5 && <1
+    , with-utf8 >=1.0.2.3 && <2
+  default-language: Haskell2010
+
+test-suite hlox-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.15 && <5
+    , errors ==2.*
+    , extra >=1.7 && <2
+    , flow ==2.*
+    , hashable ==1.*
+    , hashtables ==1.*
+    , hlox
+    , recursion-schemes >=5.2 && <6
+    , text >=1.2.4.1 && <2
+    , time ==1.*
+    , transformers >=0.5 && <1
+    , with-utf8 >=1.0.2.3 && <2
+  default-language: Haskell2010
